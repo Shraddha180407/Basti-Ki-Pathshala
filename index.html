@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basti Ki Pathshala - Education for All</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+
+</head>
+<body class="transition-colors duration-500 bg-gray-900 text-gray-300">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gray-900 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <div class="text-white text-lg font-semibold">Loading Basti Ki Pathshala...</div>
+            <div class="text-gray-400 text-sm mt-2">Empowering education for all</div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-gray-800 z-50">
+        <div class="scroll-progress h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300" style="width: 0%"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="bg-gray-900/90 backdrop-blur-md shadow-lg shadow-blue-500/20 sticky top-0 z-50 border-b border-gray-700/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div>
+                <a href="#" class="flex items-center group">
+                    <img src="Basti_Ki_Pathshala-_Official_Logo-removebg-preview.png" alt="Basti Ki Pathshala Logo" class="h-12 w-auto transition-transform duration-300 group-hover:scale-105">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-blue-500 font-bold transition duration-300 relative group">
+                    Home
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="about.html" class="text-blue-500 font-bold transition duration-300 relative group">
+                    About Us
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-blue-500 transition duration-300 relative group">
+                    Our Work
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-blue-500 transition duration-300 relative group">
+                    Get Involved
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-blue-500 transition duration-300 relative group">
+                    Join Our Team
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-blue-500 transition duration-300 relative group">
+                    Contact
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+        
+            <!-- Right-aligned buttons (Desktop and Mobile) -->
+            <div class="flex items-center space-x-4">
+                <!-- Donate Button (visible on desktop) -->
+                <a href="#" class="hidden md:block bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold px-6 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/50 transform hover:scale-105 pulse-glow">Donate Now</a>
+                
+                <!-- Mobile Menu (includes donate button and hamburger) -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <a href="#" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold px-4 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 transition duration-300">Donate Now</a>
+                    <button id="mobile-menu-button" class="text-gray-400 focus:outline-none focus:text-blue-500 transition-colors duration-300" aria-label="Toggle mobile menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle" class="text-gray-300 hover:text-yellow-400 transition duration-300 focus:outline-none focus:text-yellow-400" aria-label="Toggle theme">
+                <span id="theme-icon" class="text-xl">🌙</span>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50">
+            <div class="container mx-auto px-6 py-4 space-y-2">
+                <a href="index.html" class="block py-3 px-4 text-sm text-blue-500 font-bold bg-gray-800/50 rounded-lg">Home</a>
+                <a href="about.html" class="block py-3 px-4 text-sm text-blue-500 font-bold bg-gray-800/50 rounded-lg">About Us</a>
+                <a href="#" class="block py-3 px-4 text-sm text-gray-300 hover:bg-gray-800/50 hover:text-blue-500 rounded-lg transition-colors">Our Work</a>
+                <a href="#" class="block py-3 px-4 text-sm text-gray-300 hover:bg-gray-800/50 hover:text-blue-500 rounded-lg transition-colors">Get Involved</a>
+                <a href="#" class="block py-3 px-4 text-sm text-gray-300 hover:bg-gray-800/50 hover:text-blue-500 rounded-lg transition-colors">Join Our Team</a>
+                <a href="#" class="block py-3 px-4 text-sm text-gray-300 hover:bg-gray-800/50 hover:text-blue-500 rounded-lg transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - Modern Split -->
+    <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden relative min-h-screen flex items-center">
+        <!-- Animated Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 animate-pulse" style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px), radial-gradient(circle at 75% 75%, #3b82f6 2px, transparent 2px); background-size: 50px 50px;"></div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-xl animate-bounce"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-pink-500/20 rounded-full blur-xl animate-pulse"></div>
+        <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-lime-500/20 rounded-full blur-lg animate-ping"></div>
+        
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center px-6 py-20 relative z-10">
+            <!-- Text Content -->
+            <div class="text-center md:text-left fade-in-up">
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                    Building the Future. 
+                    <span class="gradient-text">One Student at a Time</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl">We're not just teaching. We're creating a launchpad for the next generation of leaders, thinkers, and innovators. Every child deserves the opportunity to dream big and achieve bigger.</p>
+                
+                <!-- Quick Stats Preview -->
+                <div class="grid grid-cols-3 gap-4 mb-8 max-w-md mx-auto md:mx-0">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-500">31K+</div>
+                        <div class="text-sm text-gray-400">Lives Changed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-lime-500">29K+</div>
+                        <div class="text-sm text-gray-400">Meals Served</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-500">20K+</div>
+                        <div class="text-sm text-gray-400">Students</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                     <a href="#" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-4 px-8 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/50 transform hover:scale-105 pulse-glow">Get Involved</a>
+                     <a href="#" class="bg-gray-700/50 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-lg hover:bg-gray-600/50 transition duration-300 border border-gray-600 hover:border-gray-500 transform hover:scale-105">Learn More</a>
+                </div>
+            </div>
+            <!-- Image Content -->
+            <div id="hero-image-container" class="opacity-0 transition-all duration-1000 ease-out fade-in-up" style="transition-delay: 400ms;">
+                <div class="relative">
+                    <img src="Pehchaan -The Street School Trust.jpeg" alt="Children learning in a classroom" class="rounded-2xl shadow-2xl shadow-blue-900/30 transform hover:scale-105 transition-transform duration-500">
+                    <div class="absolute -bottom-4 -right-4 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg">
+                        <div class="text-sm font-semibold">Making Dreams Reality</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="bg-gray-800 py-20">
+        <div class="container mx-auto px-6">
+            <!-- Mission Text -->
+            <section class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Core Mission</h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">We exist to dismantle the barriers to education. We provide the tools, environment, and inspiration for children in underserved communities to build extraordinary futures.</p>
+            </section>
+    
+            <!-- Impact Numbers Section -->
+            <section class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-20">
+                <div class="fade-in-up">
+                    <h3 class="number-animate text-5xl font-bold text-blue-500" data-target="31245">31,245</h3>
+                    <p class="text-lg text-gray-400 mt-2">Lives Changed</p>
+                </div>
+                <div class="fade-in-up" style="transition-delay: 100ms;">
+                    <h3 class="number-animate text-5xl font-bold text-blue-500" data-target="28976">28,976</h3>
+                    <p class="text-lg text-gray-400 mt-2">Meals Served</p>
+                </div>
+                <div class="fade-in-up" style="transition-delay: 200ms;">
+                    <h3 class="number-animate text-5xl font-bold text-blue-500" data-target="19854">19,854</h3>
+                    <p class="text-lg text-gray-400 mt-2">Interns</p>
+                </div>
+                <div class="fade-in-up" style="transition-delay: 300ms;">
+                    <h3 class="number-animate text-5xl font-bold text-blue-500" data-target="10989">10,989</h3>
+                    <p class="text-lg text-gray-400 mt-2">Supporters</p>
+                </div>
+            </section>
+    
+            <!-- Our Programmes Section -->
+            <section class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 fade-in-up">Our Programmes</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Program 1: Breaking Poverty -->
+                    <div class="group bg-gray-900 p-8 rounded-lg border border-gray-700 text-center transition-all duration-300 hover:border-blue-500 hover:-translate-y-2 fade-in-up hover-lift">
+                        <div class="mb-4">
+                            <svg class="w-20 h-20 mx-auto text-blue-500 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 12L6 24L32 36L58 24L32 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 24V40L32 52L58 40V24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 28L32 36L14 28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 52V36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Breaking Poverty</h3>
+                        <p class="text-gray-400 mb-4">Education empowers slum children with skills and knowledge, helping them escape poverty. It opens doors to better opportunities and a brighter future.</p>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <span class="inline-block bg-blue-500/20 text-blue-400 px-2 py-1 rounded mr-2">📚 Academic Support</span>
+                            <span class="inline-block bg-blue-500/20 text-blue-400 px-2 py-1 rounded">🎯 Career Guidance</span>
+                        </div>
+                        <a href="#" class="text-blue-500 font-semibold mt-4 inline-block opacity-0 group-hover:opacity-100 transition-opacity duration-300">Learn More &rarr;</a>
+                    </div>
+                    <!-- Program 2: Self Empowerment -->
+                    <div class="group bg-gray-900 p-8 rounded-lg border border-gray-700 text-center transition-all duration-300 hover:border-lime-400 hover:-translate-y-2 fade-in-up hover-lift" style="transition-delay: 200ms;">
+                        <div class="mb-4">
+                             <svg class="w-20 h-20 mx-auto text-lime-400 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 40L6 58" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 40L58 58" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 24C36.4183 24 40 20.4183 40 16C40 11.5817 36.4183 8 32 8C27.5817 8 24 11.5817 24 16C24 20.4183 27.5817 24 32 24Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 30C16.4183 30 20 26.4183 20 22C20 17.5817 16.4183 14 12 14C7.58172 14 4 17.5817 4 22C4 26.4183 7.58172 30 12 30Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M52 30C56.4183 30 60 26.4183 60 22C60 17.5817 56.4183 14 52 14C47.5817 14 44 17.5817 44 22C44 26.4183 47.5817 30 52 30Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 22C20 32 24 40 24 40" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 22C44 32 40 40 40 40" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Self Empowerment</h3>
+                        <p class="text-gray-400 mb-4">Education helps slum children build confidence and self-worth. It inspires them to dream big and work toward a better life.</p>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <span class="inline-block bg-lime-500/20 text-lime-400 px-2 py-1 rounded mr-2">💪 Confidence Building</span>
+                            <span class="inline-block bg-lime-500/20 text-lime-400 px-2 py-1 rounded">🎨 Creative Expression</span>
+                        </div>
+                        <a href="#" class="text-lime-400 font-semibold mt-4 inline-block opacity-0 group-hover:opacity-100 transition-opacity duration-300">Learn More &rarr;</a>
+                    </div>
+                    <!-- Program 3: Fostering Hope -->
+                    <div class="group bg-gray-900 p-8 rounded-lg border border-gray-700 text-center transition-all duration-300 hover:border-pink-500 hover:-translate-y-2 fade-in-up hover-lift" style="transition-delay: 400ms;">
+                         <div class="mb-4">
+                            <svg class="w-20 h-20 mx-auto text-pink-500 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 58C46.3594 58 58 46.3594 58 32C58 17.6406 46.3594 6 32 6C17.6406 6 6 17.6406 6 32C6 46.3594 17.6406 58 32 58Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M42 26L30 38L22 30" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Fostering Hope</h3>
+                        <p class="text-gray-400 mb-4">Education builds resilience in slum children, helping them face challenges with strength. It shows them a brighter future is possible.</p>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <span class="inline-block bg-pink-500/20 text-pink-400 px-2 py-1 rounded mr-2">🌟 Mental Health Support</span>
+                            <span class="inline-block bg-pink-500/20 text-pink-400 px-2 py-1 rounded">🤝 Community Building</span>
+                        </div>
+                        <a href="#" class="text-pink-500 font-semibold mt-4 inline-block opacity-0 group-hover:opacity-100 transition-opacity duration-300">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Join Our Team Section -->
+    <section class="relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gray-900 opacity-70"></div>
+        
+        <!-- Content -->
+        <div class="relative container mx-auto px-6 py-20 text-center text-white">
+            <h2 class="text-4xl font-bold leading-tight mb-4 fade-in-up">Become a Changemaker</h2>
+            <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto fade-in-up" style="transition-delay: 200ms;">Your time, skills, and passion can create a world of difference. Join our team of dedicated volunteers and staff to bring hope and education to those who need it most.</p>
+            <a href="#" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/50 fade-in-up" style="transition-delay: 400ms;">See Opportunities</a>
+        </div>
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <section class="bg-gray-800 py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Stories of Transformation</h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">Hear from the children and families whose lives have been changed through education and support.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-700 hover-lift fade-in-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">P</div>
+                        <div>
+                            <h4 class="text-white font-semibold">Priya Sharma</h4>
+                            <p class="text-blue-400 text-sm">Student, Class 8</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Basti Ki Pathshala gave me more than education - it gave me confidence. I now dream of becoming a doctor to help others like me."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-700 hover-lift fade-in-up" style="transition-delay: 200ms;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-lime-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">R</div>
+                        <div>
+                            <h4 class="text-white font-semibold">Rajesh Kumar</h4>
+                            <p class="text-lime-400 text-sm">Parent</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"My daughter's future looked bleak until we found Basti Ki Pathshala. Now she's the first in our family to attend college."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-700 hover-lift fade-in-up" style="transition-delay: 400ms;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">A</div>
+                        <div>
+                            <h4 class="text-white font-semibold">Aisha Khan</h4>
+                            <p class="text-pink-400 text-sm">Volunteer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Teaching here has been the most rewarding experience. Seeing children discover their potential is truly magical."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-gray-800 py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">Ready to make a difference? Contact us to learn more about our programs or how you can get involved.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="fade-in-up">
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-white font-semibold mb-2">First Name *</label>
+                                <input type="text" name="firstName" placeholder="Enter your first name" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 form-input">
+                            </div>
+                            <div>
+                                <label class="block text-white font-semibold mb-2">Last Name *</label>
+                                <input type="text" name="lastName" placeholder="Enter your last name" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 form-input">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-white font-semibold mb-2">Email *</label>
+                            <input type="email" name="email" placeholder="Enter your email address" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 form-input">
+                        </div>
+                        <div>
+                            <label class="block text-white font-semibold mb-2">Phone Number</label>
+                            <input type="tel" name="phone" placeholder="Enter your phone number (optional)" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 form-input">
+                        </div>
+                        <div>
+                            <label class="block text-white font-semibold mb-2">How would you like to help? *</label>
+                            <select name="interest" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 form-input">
+                                <option value="">Select an option</option>
+                                <option value="volunteer">Volunteer</option>
+                                <option value="donate">Donate</option>
+                                <option value="partner">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-white font-semibold mb-2">Message *</label>
+                            <textarea name="message" rows="4" placeholder="Tell us how you'd like to get involved or ask any questions..." required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 resize-none form-input"></textarea>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="newsletter" name="newsletter" class="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500 focus:ring-2">
+                            <label for="newsletter" class="ml-2 text-sm text-gray-300">Subscribe to our newsletter for updates</label>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-4 px-8 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/50 transform hover:scale-105 flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                            </svg>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="fade-in-up" style="transition-delay: 200ms;">
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-4">Contact Information</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <svg class="w-6 h-6 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span class="text-gray-300">New Delhi, India</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-6 h-6 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                    </svg>
+                                    <span class="text-gray-300">+91 98765 43210</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-6 h-6 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <span class="text-gray-300">info@bastikipathshala.org</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-white">
+        <div class="container mx-auto px-6 py-10">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Basti Ki Pathshala</h3>
+                    <p class="text-gray-400">A non-profit organization dedicated to providing education to underprivileged children.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Donate</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Join Our Team</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <!-- Social Media Icon Links -->
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12.014c0 4.438 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.014C22 6.477 17.523 2 12 2z" clip-rule="evenodd" /></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 Basti Ki Pathshala. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+      
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 opacity-0 invisible transform translate-y-10 z-40">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
